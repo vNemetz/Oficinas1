@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Fechadura</title>
+    <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Cadastro de Fechadura</h1>
+        <form id="formCadastroFechadura">
+            <label for="numeroFechadura">Número da Fechadura:</label>
+            <input type="text" id="numeroFechadura" required>
+
+            <label for="senhaFechadura">Senha (6 dígitos):</label>
+            <input type="password" id="senhaFechadura" required maxlength="6">
+
+            <button type="button" id="btnCadastrarFechadura">Cadastrar Fechadura</button>
+        </form>
+        <div id="feedbackMessage" style="display: none;" class="feedback-message"></div>
+
+        <!-- Mensagem de erro ou sucesso -->
+        <div id="message" style="display:none;">
+            <p id="messageText"></p>
+            <button id="btnIrParaAcesso" onclick="window.location.href='acesso.html'">Ir para Login</button>
+        </div>
+
+        <!-- Link para página de login -->
+        <p>Já tem uma fechadura cadastrada? <a href="acesso.html">Clique aqui para acessar</a></p>
+    </div>
+
+    <script src="assets/main.js"></script>
+</body>
+</html>

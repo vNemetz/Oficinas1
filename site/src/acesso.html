@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acesso</title>
+    <link rel="stylesheet" href="../assets/styles.css">
+</head>
+<body>
+
+    <div class="acesso">
+        <h2>Bem-vindo à página de acesso da Automatic Door Locker</h2>
+        <p>Digite as informações de login de sua fechadura para acessar suas funcionalidades</p>
+
+        <!-- Formulário de acesso -->
+        <form id="formAcesso">
+            <label for="numeroFechadura">Número da Fechadura:</label>
+            <input type="text" id="numeroFechadura" placeholder="Número da Fechadura" required>
+            
+            <label for="senhaFechadura">Senha (6 dígitos):</label>
+            <input type="password" id="senhaFechadura" placeholder="Senha" required pattern="^\d{6}$">
+            
+            <button type="submit">Acessar</button>
+        </form>
+
+        <p id="mensagemAcesso"></p> <!-- Mensagem de erro ou sucesso -->
+    </div>
+
+    <script src="../assets/main.js"></script>
+
+</body>
+</html>
