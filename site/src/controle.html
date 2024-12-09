@@ -8,14 +8,20 @@
 </head>
 <body>
 
-    <div class="controle">
+    <div class="container">
         <h2>Controle da Fechadura</h2>
-        <button id="abrirFechadura">Abrir Fechadura</button>
-        <button id="fecharFechadura">Fechar Fechadura</button>
-        <!-- Adicione outros controles conforme necessário -->
+        
+        <!-- Botões com um visual mais moderno e espaçados -->
+        <div class="buttons-container">
+            <button id="abrirFechadura" class="controle-btn">Abrir Fechadura</button>
+            <button id="fecharFechadura" class="controle-btn">Fechar Fechadura</button>
+        </div>
+
+        <!-- Espaço para exibir o feedback -->
+        <div id="feedbackMensagem" class="feedback-message"></div>
     </div>
 
-    <script src="../assets/main.js"></script>
+    <script src="../assets/controle.js"></script>
 
 </body>
 </html>

@@ -1,4 +1,69 @@
-/* Reset de margens e paddings */
+/* Resetando margens e paddings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f2f4f8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #333;
+    overflow: hidden;
+}
+
+.container {
+    background-color: #ffffff;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    border-radius: 16px;
+    padding: 40px;
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.container:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.15);
+}
+
+h1 {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #34495e;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+label {
+    font-size: 14px;
+    font-weight: 500;
+    color: #7f8c8d;
+    text-align: left;
+}
+
+input {
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    outline: none;
+    width: 100%;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+/* Resetando margens e paddings */
 * {
     margin: 0;
     padding: 0;
@@ -7,83 +72,144 @@
 
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #f4f6f9;
+    background-color: #f5f6f9;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     color: #333;
+    overflow: hidden; /* Impede rolagem desnecessária */
 }
 
 .container {
     background-color: #ffffff;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
     padding: 40px;
-    max-width: 400px;
+    max-width: 500px;
     width: 100%;
     text-align: center;
+    transition: transform 0.3s ease;
 }
 
-h1 {
-    color: #3e4e59;
-    margin-bottom: 20px;
-    font-size: 24px;
+.container:hover {
+    transform: translateY(-5px);
 }
 
-form {
+h2 {
+    text-align: center; /* Centraliza o título */
+    margin-bottom: 30px; /* Ajuste o espaçamento abaixo do título */
+    font-size: 24px; /* Tamanho da fonte */
+    font-weight: 600; /* Deixa o título mais forte */
+    color: #34495e; /* Cor do texto */
+}
+
+/* Container para os botões com espaçamento adequado */
+.buttons-container {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 20px; /* Espaçamento entre os botões */
 }
 
-label {
-    font-size: 14px;
-    font-weight: 600;
-    color: #555;
-    text-align: left;
-}
-
-input {
-    padding: 12px;
+/* Estilo dos botões */
+.controle-btn {
+    background-color: #3498db;
+    color: white;
+    padding: 14px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
     font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    outline: none;
+    font-weight: 600;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    width: 100%; /* Garante que os botões ocuparam toda a largura disponível */
+}
+
+.controle-btn:hover {
+    background-color: #2980b9;
+    transform: scale(1.05);
+}
+
+.controle-btn:active {
+    background-color: #1f6391;
+}
+
+/* Estilo para o feedback */
+.feedback-message {
+    margin-top: 20px;
+    padding: 12px;
+    background-color: #f44336;
+    color: white;
+    text-align: center;
+    border-radius: 8px;
     width: 100%;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 16px;
+    transition: opacity 0.3s ease;
+}
+
+.feedback-message.success {
+    background-color: #2ecc71;
+}
+
+.feedback-message.error {
+    background-color: #e74c3c;
+}
+
+/* Responsividade para telas pequenas */
+@media (max-width: 600px) {
+    .container {
+        padding: 20px;
+    }
+
+    h2 {
+        font-size: 24px;
+    }
+
+    .controle-btn {
+        font-size: 14px;
+        padding: 12px;
+    }
+
+    #feedbackMensagem {
+        font-size: 14px;
+    }
 }
 
 input:focus {
-    border-color: #4a90e2;
-    box-shadow: 0 0 5px rgba(74, 144, 226, 0.5);
+    border-color: #3498db;
+    box-shadow: 0 0 8px rgba(52, 152, 219, 0.5);
 }
 
 button {
-    background-color: #4a90e2;
+    background-color: #3498db;
     color: white;
     padding: 12px;
     border: none;
-    border-radius: 5px;
+    border-radius: 12px;
     cursor: pointer;
     font-size: 16px;
-    transition: background-color 0.3s ease;
+    font-weight: 600;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 button:hover {
-    background-color: #357ab7;
+    background-color: #2980b9;
+    transform: scale(1.05);
 }
 
 button:active {
-    background-color: #2a5b8d;
+    background-color: #1f6391;
 }
 
 #message {
     margin-top: 20px;
     font-size: 16px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    color: #7f8c8d;
 }
 
 #message p {
@@ -91,54 +217,94 @@ button:active {
 }
 
 #btnIrParaAcesso {
-    background-color: #e84e56;
+    background-color: #e74c3c;
     margin-top: 10px;
-    width: 100%; /* Adiciona essa linha para garantir que ocupe toda a largura disponível */
-    max-width: 300px; /* Limita a largura do botão */
-    margin-left: auto; /* Garante que o botão seja centralizado */
-    margin-right: auto; /* Garante que o botão seja centralizado */
+    width: 100%;
+    max-width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 12px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 #btnIrParaAcesso:hover {
-    background-color: #d03e47;
+    background-color: #c0392b;
+    transform: scale(1.05);
 }
 
 #btnIrParaAcesso:active {
-    background-color: #b03a42;
+    background-color: #a93226;
 }
 
 p {
     margin-top: 15px;
     font-size: 14px;
-    color: #666;
+    color: #7f8c8d;
 }
 
 a {
-    color: #4a90e2;
+    color: #3498db;
     text-decoration: none;
+    font-weight: 600;
 }
 
 a:hover {
     text-decoration: underline;
 }
+
+/* Mensagens de Feedback */
 .feedback-message {
     margin-top: 20px;
-    padding: 10px;
+    padding: 14px;
     background-color: #f44336;
     color: white;
     text-align: center;
-    border-radius: 5px;
+    border-radius: 12px;
     width: 100%;
-    max-width: 500px;
+    max-width: 400px;
     margin-left: auto;
     margin-right: auto;
     font-size: 16px;
+    transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 .feedback-message.success {
-    background-color: #4CAF50;
+    background-color: #2ecc71;
 }
 
 .feedback-message.error {
-    background-color: #f44336;
+    background-color: #e74c3c;
+}
+h2 {
+    text-align: center;
+    margin-bottom: 20px; /* Ajuste o espaçamento inferior, se necessário */
+}
+
+
+/* Responsividade para telas pequenas */
+@media (max-width: 600px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    input, button {
+        font-size: 14px;
+        padding: 12px;
+    }
+
+    #message p {
+        font-size: 14px;
+    }
+
+    #btnIrParaAcesso {
+        font-size: 14px;
+        padding: 12px;
+    }
 }

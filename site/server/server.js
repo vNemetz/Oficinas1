@@ -71,3 +71,29 @@
     app.listen(port, () => {
         console.log(`Servidor rodando em http://localhost:${port}`);
     });
+
+// Rota para controlar a fechadura (Abrir/Fechar)
+app.post('/api/comando-fechadura', async (req, res) => {
+    const { comando } = req.body;
+
+    if (comando === undefined) {
+        return res.json({ success: false, message: 'Comando não informado.' });
+    }
+
+    // Aqui você pode adicionar lógica para controlar a fechadura real.
+    // Por exemplo, se a fechadura for um dispositivo físico conectado, você enviaria um comando para ele
+    // dependendo do valor do comando (1 para abrir, 2 para fechar).
+
+    // Para fins de exemplo, vamos apenas simular a execução do comando.
+    if (comando === 1) {
+        console.log("Comando para abrir a fechadura recebido.");
+        // Adicionar aqui a lógica para abrir a fechadura
+    } else if (comando === 2) {
+        console.log("Comando para fechar a fechadura recebido.");
+        // Adicionar aqui a lógica para fechar a fechadura
+    } else {
+        return res.json({ success: false, message: 'Comando inválido.' });
+    }
+
+    return res.json({ success: true, message: `Comando ${comando === 1 ? 'Abrir' : 'Fechar'} recebido.` });
+});
