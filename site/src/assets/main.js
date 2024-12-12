@@ -18,7 +18,7 @@ document.getElementById("btnCadastrarFechadura").addEventListener("click", async
     }
 
     try {
-        const response = await fetch('http://localhost:3000/api/cadastrar-fechadura', {
+        const response = await fetch('http://192.168.0.13:3000/api/cadastrar-fechadura', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -54,7 +54,7 @@ document.getElementById("btnAcessarFechadura").addEventListener("click", async f
     }
 
     try {
-        const response = await fetch('http://localhost:3000/api/acessar-fechadura', {
+        const response = await fetch('http://192.168.0.13:3000/api/cadastrar-fechadura', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

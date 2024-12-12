@@ -14,7 +14,7 @@ document.getElementById('fecharFechadura').addEventListener('click', async funct
 
 async function enviarComandoFechadura(valor) {
     try {
-        const response = await fetch('http://localhost:3000/api/comando-fechadura', {
+        const response = await fetch('http://192.168.0.13:3000/api/comando-fechadura', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
