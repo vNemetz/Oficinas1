@@ -5,4 +5,4 @@ The ADL is an alternative for the usual door lockers, being safer, unlocking onl
 
 The ADL Project was built by Murilo Patricio Nascimento, Felipe dos Reis Garcez and Vinícius Nemetz Grabovski, as a project for First Integration Workshop's Subject at UTFPR - Technological Federal University of Paraná - Brazil.
 
-We used c++ programming language with the OpenCV library for the recognition algorithm, and for the website, JavaScript, CSS and HTML for the frontend and JavaScript and MongoDB for the backend.
+We used C++ programming language with the OpenCV library for the recognition algorithm, and for the website, JavaScript, CSS and HTML for the frontend and JavaScript and MongoDB for the backend.
