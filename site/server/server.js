@@ -4,6 +4,8 @@
     const cors = require('cors');
     const Fechadura = require('./models/fechadura');
 
+
+
     const app = express();
     const port = 3000;
 
@@ -13,8 +15,6 @@
 
     // Conexão com o MongoDB
     mongoose.connect('mongodb://localhost:27017/cadastroFechadura', {
-        useNewUrlParser: true,
-        useUnifiedTopology: true
     }).then(() => {
         console.log("Conectado ao MongoDB!");
     }).catch((err) => {
@@ -71,6 +71,23 @@
     app.listen(port, '0.0.0.0', () => {
         console.log(`Servidor rodando em http://0.0.0.0:${port}`);
     });
+    const { Board, Servo } = require("johnny-five");
+
+    // Inicializa a placa
+    const board = new Board();
+    let servo;
+    
+    // Configuração da placa e do servo
+    board.on("ready", () => {
+      console.log("Placa conectada!");
+    
+      // Configurar o servo no pino 10
+      servo = new Servo(10);
+    
+      console.log("Servo inicializado no pino 10.");
+    });
+    
+
 
 // Rota para controlar a fechadura (Abrir/Fechar)
 app.post('/api/comando-fechadura', async (req, res) => {
@@ -86,14 +103,23 @@ app.post('/api/comando-fechadura', async (req, res) => {
 
     // Para fins de exemplo, vamos apenas simular a execução do comando.
     if (comando === 1) {
-        console.log("Comando para abrir a fechadura recebido.");
-        // Adicionar aqui a lógica para abrir a fechadura
+        if (servo) {
+            console.log("Comando para abrir a fechadura recebido.");
+            servo.to(0); // Gira para 0 graus (anti-horário)
+        } else {
+            console.log("Servo não está inicializado.");
+        }
     } else if (comando === 2) {
-        console.log("Comando para fechar a fechadura recebido.");
-        // Adicionar aqui a lógica para fechar a fechadura
+        if (servo) {
+            console.log("Comando para fechar a fechadura recebido.");
+            servo.to(180); // Gira para 180 graus (horário)
+        } else {
+            console.log("Servo não está inicializado.");
+        }
     } else {
         return res.json({ success: false, message: 'Comando inválido.' });
     }
+    
 
     return res.json({ success: true, message: `Comando ${comando === 1 ? 'Abrir' : 'Fechar'} recebido.` });
 });
